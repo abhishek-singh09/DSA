@@ -14,7 +14,7 @@ public:
         ListNode* node= head;
         if(node==NULL ||node->next==nullptr) return node;
 
-        while(node->next!=nullptr){
+        while(node->next!=NULL){
             if(node->val==node->next->val){
                 node->next=node->next->next;
             }else{
@@ -22,8 +22,8 @@ public:
             }
         }
 
-        node=head;
-        return node;
+        // node=head;
+        return head;
 
         
         
