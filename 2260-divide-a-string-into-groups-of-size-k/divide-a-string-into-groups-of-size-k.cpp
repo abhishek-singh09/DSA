@@ -4,16 +4,6 @@ public:
 
         int size= s.size();
         vector<string> str;
-        if(size%k==0){
-            for(int i=0;i<size;i=i+k){
-                string a="";
-                for(int j=i;j<i+k;j++){
-                    a= a+s[j];
-                }
-                str.push_back(a);
-            }
-            return str;
-        }
         
         for(int i=0;i<size;i=i+k){
            string a="";
