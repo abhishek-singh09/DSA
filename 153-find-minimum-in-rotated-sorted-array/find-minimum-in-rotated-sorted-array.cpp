@@ -3,13 +3,15 @@ public:
     int findMin(vector<int>& nums) {
         int low=0;
         int high=nums.size()-1;
-        while(low<=high-1){
-            if(nums[low]>=nums[low+1]){
-                int m=low+1;
-                rotate(nums.begin(),nums.begin()+m, nums.end());
+        while(low<high){
+            int mid= low+(high-low)/2;
+            if(nums[mid]>nums[high]){
+                low=mid+1;
+            }else{
+                high=mid;
             }
-            low++;
         }
-        return nums[0];
+        return nums[low];
+
     }
 };
