@@ -13,16 +13,17 @@ class Solution {
 public:
     vector<int> inorderTraversal(TreeNode* root) {
         vector<int> res;
-        dfs(root, res);
+        dfs(root,res);
         return res;
         
     }
 
-    void dfs(TreeNode* node, vector<int>& res){
-        if(node==NULL) return;
+    void dfs(TreeNode* root, vector<int>& res){
+        if(root==NULL) return;
 
-        dfs(node->left, res);
-        res.push_back(node->val);
-        dfs(node->right, res);
+        dfs(root->left,res);
+        res.push_back(root->val);
+        dfs(root->right,res);
+
     }
 };
