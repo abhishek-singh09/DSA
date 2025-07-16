@@ -11,15 +11,16 @@
  */
 class Solution {
 public:
-    void check(TreeNode* r){
-        if(r==NULL) return;
-        if(r->left!=nullptr || r->right!=nullptr){
-            TreeNode* t= r->right;
-            r->right=r->left;
-            r->left=t;
+    void check(TreeNode* root){
+        if(root==NULL) return;
+
+        if(root->left || root->right){
+            TreeNode* temp= root->left;
+            root->left=root->right;
+            root->right=temp;
         }
-        check(r->left);
-        check(r->right);
+        check(root->left);
+        check(root->right);       
         
         
     }
@@ -27,6 +28,7 @@ public:
     TreeNode* invertTree(TreeNode* root) {
         check(root);
         return root;
+
         
     }
 };
