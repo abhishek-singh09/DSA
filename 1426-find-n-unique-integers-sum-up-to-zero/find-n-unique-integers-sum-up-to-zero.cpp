@@ -1,7 +1,6 @@
 class Solution {
 public:
     vector<int> sumZero(int n) {
-
         vector<int> arr(n);
         int a=-n/2;
         if(n%2!=0){
