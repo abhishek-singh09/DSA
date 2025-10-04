@@ -3,20 +3,16 @@ public:
     int maxArea(vector<int>& height) {
         int l=0;
         int h=height.size()-1;
-        int mx=INT_MIN;
-        while(l<h){
-            int mn=min(height[l],height[h]);
-            int area= mn*(h-l);
+        int res=0;
 
-            if(height[l]>height[h]){
-                h--;
-            }else{
+        while(l<=h){
+            res=max(res, (h-l)*min(height[l],height[h]));
+            if(height[l]<height[h]){
                 l++;
+            }else{
+                h--;
             }
-            mx=max(mx,area);
         }
-        
-        return mx;
-        
+        return res;        
     }
 };
